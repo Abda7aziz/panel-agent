@@ -1,4 +1,6 @@
-# yt_downloader
+# panel-agent
+
+# TODO: update README
 
 A simple CLI tool to download your own YouTube videos or audio using [`yt-dlp`](https://github.com/yt-dlp/yt-dlp).
 
