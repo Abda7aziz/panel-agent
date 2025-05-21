@@ -2,6 +2,8 @@ import yt_dlp
 import os
 import whisper
 
+# TODO: update downloader to take args based on the functoin "download"
+
 def download(url, audio_only=False, quality='best', transcribe=False,
              cc=False, cc_lang='en', cc_mode=None):
     """
@@ -50,25 +52,23 @@ def download(url, audio_only=False, quality='best', transcribe=False,
             except ImportError:
                 print("⚠️ webvtt not installed; run: pip install webvtt-py")
         elif cc_mode == 'burn':
-            burned = output_path.rsplit('artifact/video', 1)[0] + '.subtitled.mp4'
+            burned = output_path.rsplit('artifacts/video', 1)[0] + '.subtitled.mp4'
             os.system(f'ffmpeg -i "{output_path}" -vf subtitles="{subtitle_file}" "{burned}"')
             print(f"✅ Video with embedded subtitles saved to: {burned}")
 
     # Whisper transcription
     if transcribe:
         if not audio_only:
-            mp3 = output_path.rsplit('artifact/audio', 1)[0] + '.mp3'
+            mp3 = output_path.rsplit('artifacts/audio', 1)[0] + '.mp3'
             os.system(f'ffmpeg -i "{output_path}" -vn -acodec libmp3lame "{mp3}"')
         else:
             mp3 = output_path
         model = whisper.load_model('base')
         result = model.transcribe(mp3)
-        transcript = output_path.rsplit('artifact/transcript', 1)[0] + '_transcript.txt'
+        transcript = output_path.rsplit('artifacts/transcript', 1)[0] + '_transcript.txt'
         with open(transcript, 'w', encoding='utf-8') as f:
             f.write(result['text'])
         print(f"✅ Transcription saved to: {transcript}")
         return transcript
 
     return output_path
-
-download('', transcribe=True)

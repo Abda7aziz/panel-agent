@@ -21,7 +21,7 @@ def build_retriever(transcript_path: str, collection_name: str = "panel-agent"):
 
   
 
-    # Add documents only once
+    # Add documents to db
     if add_docs:
         docs, ids = [], []
         for i, line in enumerate(lines):
