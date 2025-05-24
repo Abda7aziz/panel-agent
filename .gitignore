@@ -178,3 +178,5 @@ artifacts/audio/*
 artifacts/video/*
 artifacts/transcript/*
 chromadb_langchain
+.DS_Store
+artifacts/.DS_Store
