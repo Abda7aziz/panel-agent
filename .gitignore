@@ -180,3 +180,11 @@ artifacts/transcript/*
 chromadb_langchain
 .DS_Store
 artifacts/.DS_Store
+
+
+# === Chroma DB (local vector DB) ===
+chromadb_langchain/
+
+# === Gradio ===
+gradio_cached_examples/
+.gradio/  # in case it dumps UI cache
