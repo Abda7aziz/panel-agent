@@ -1,7 +1,9 @@
-# PanelAgent
-##### TODO: An agent that parse the transcript as a talk, panel discussion or an interview.
-##### TODO: A script or an agent to split the transcript according to its type as chunks of docs.
 
+
+# PanelAgent
+##### TODO: update the README.md for this mcp branch
+##### TODO: include the video download/transcript processing and victor-embedding as an automated script
+##### TODO: enable user to add the video url in the UI
 
 PanelAgent is a Q&A system that uses AI to answer questions based on panel discussion transcripts. It leverages LangChain, Ollama, and ChromaDB to provide context-aware responses from transcript data.
 
