@@ -180,11 +180,22 @@ artifacts/transcript/*
 chromadb_langchain
 .DS_Store
 artifacts/.DS_Store
-
+# === Local artifacts ===
+artifacts/
+*.mp4
+*.txt
 
 # === Chroma DB (local vector DB) ===
 chromadb_langchain/
 
 # === Gradio ===
-gradio_cached_examples/
-.gradio/  # in case it dumps UI cache
+# gradio_cached_examples/
+gradio/  # in case it dumps UI cache
+.gradio/
+
+# === Ollama (optional cache paths) ===
+ollama_models/
+
+# === MCP Dev Files ===
+panel-agent/mcp_agent/__pycache__/
+panel-agent/agent/__pycache__/
