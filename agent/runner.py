@@ -4,7 +4,7 @@ from langchain_ollama.llms import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 from agent.vector import build_retriever
 
-TRANSCRIPT_PATH = "artifacts/transcript/OpenAI’s Sam Altman Talks ChatGPT, AI Agents and Superintelligence — Live at TED2025.mp4_transcript.txt"
+TRANSCRIPT_PATH = "artifacts/transcript/OpenAI’s Sam Altman Talks ChatGPT, AI Agents and Superintelligence — Live at TED2025.mp4_transcript.txt" #replace with your transcript path
 
 # Setup once, reuse everywhere
 retriever = build_retriever(TRANSCRIPT_PATH)
